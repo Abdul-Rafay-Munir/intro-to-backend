@@ -38,12 +38,12 @@ README.md
 ### Installation
 
 1. Clone the repo
+
    ```bash
    git clone https://github.com/Abdul-Rafay-Munir/intro-to-backend.git
    cd intro-to-backend
-   ```
 
-````
+   ```
 
 2. Install dependencies
 
@@ -59,4 +59,7 @@ README.md
 ```bash
 npm run dev
 ```
-````
+
+```
+
+```
