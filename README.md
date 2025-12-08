@@ -41,7 +41,7 @@ README.md
    ```bash
    git clone https://github.com/Abdul-Rafay-Munir/intro-to-backend.git
    cd intro-to-backend
-````
+   ```
 
 2. Install dependencies
 
