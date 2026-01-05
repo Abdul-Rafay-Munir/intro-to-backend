@@ -15,11 +15,10 @@
 ```
 
 /src
+├── config/
 ├── controllers/
 ├── models/
 ├── routes/
-├── middlewares/
-├── utils/
 └── (other directories/files)
 
 .gitignore
@@ -42,8 +41,9 @@ README.md
    ```bash
    git clone https://github.com/Abdul-Rafay-Munir/intro-to-backend.git
    cd intro-to-backend
-
    ```
+
+````
 
 2. Install dependencies
 
@@ -59,7 +59,4 @@ README.md
 ```bash
 npm run dev
 ```
-
-```
-
-```
+````
