@@ -54,7 +54,18 @@ const loginUser = async (req, res) => {
         message: "Invalid credentials",
       });
     }
-  } catch (error) {}
+
+    res.status(200).json({
+      message: "User Logged in",
+      user: {
+        id: user._id,
+        email: user.email,
+        username: user.username,
+      },
+    });
+  } catch (error) {
+    res.status(500).json({ message: "Internal Server Error" });
+  }
 };
 
-export { registerUser };
+export { registerUser,loginUser };
