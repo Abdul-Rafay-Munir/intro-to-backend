@@ -10,12 +10,23 @@ const createPost = async (req, res) => {
       return res.status(400).json({ message: "All fields are required" });
     }
 
-    const post = await Post({ name, description, age });
+    const post = await Post.create({ name, description, age });
 
-    res.status(201).json({ message: "Post created successfully" });
+    res.status(201).json({ message: "Post created successfully", post });
   } catch (error) {
     res.status(500).json({ message: "Internal Server error", error });
   }
 };
 
-export { createPost };
+// Read all posts
+
+const getPosts = async (req, res) => {
+  try {
+    const posts = await Post.find();
+
+    res.status(200).json(posts);
+  } catch (error) {
+    res.status(500).json({ message: "Internal Server error", error });
+  }
+};
+export { createPost, getPosts };
