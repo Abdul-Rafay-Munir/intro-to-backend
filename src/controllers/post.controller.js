@@ -29,4 +29,26 @@ const getPosts = async (req, res) => {
     res.status(500).json({ message: "Internal Server error", error });
   }
 };
-export { createPost, getPosts };
+
+const updatePost = async (req, res) => {
+  try {
+    // Basic validation to check if the body is empty
+
+    //
+    if (Object.keys(req.body).length === 0) {
+      return res.status(400).json({ message: "No data provided for update" });
+    }
+
+    const post = await Post.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
+
+    if (!post) return res.status(404).json({ message: "Post not found" });
+
+    res.status(200).json({ message: "Post Updated Successfully", post });
+  } catch (error) {
+    res.status(500).json({ message: "Internal Server error", error });
+  }
+};
+
+export { createPost, getPosts, updatePost };
