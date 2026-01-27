@@ -43,8 +43,6 @@ README.md
    cd intro-to-backend
    ```
 
-````
-
 2. Install dependencies
 
    ```bash
@@ -59,4 +57,3 @@ README.md
 ```bash
 npm run dev
 ```
-````
