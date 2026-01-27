@@ -18,8 +18,7 @@
 ├── config/
 ├── controllers/
 ├── models/
-├── routes/
-└── (other directories/files)
+└── routes/
 
 .gitignore
 package.json
