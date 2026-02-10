@@ -64,7 +64,9 @@ const loginUser = async (req, res) => {
       },
     });
   } catch (error) {
-    res.status(500).json({ message: "Internal Server Error" });
+    res
+      .status(500)
+      .json({ message: "Internal Server Error", error: error.message });
   }
 };
 
@@ -79,7 +81,9 @@ const logoutUser = async (req, res) => {
 
     res.status(200).json({ message: "Logout successful" });
   } catch (error) {
-    res.status(500).json({ message: "Internal Server Error", error });
+    res
+      .status(500)
+      .json({ message: "Internal Server Error", error: error.message });
   }
 };
 

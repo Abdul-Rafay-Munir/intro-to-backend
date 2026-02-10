@@ -14,7 +14,9 @@ const createPost = async (req, res) => {
 
     res.status(201).json({ message: "Post created successfully", post });
   } catch (error) {
-    res.status(500).json({ message: "Internal Server error", error });
+    res
+      .status(500)
+      .json({ message: "Internal Server error", error: error.message });
   }
 };
 
@@ -26,15 +28,15 @@ const getPosts = async (req, res) => {
 
     res.status(200).json(posts);
   } catch (error) {
-    res.status(500).json({ message: "Internal Server error", error });
+    res
+      .status(500)
+      .json({ message: "Internal Server error", error: error.message });
   }
 };
 
 const updatePost = async (req, res) => {
   try {
     // Basic validation to check if the body is empty
-
-    //
     if (Object.keys(req.body).length === 0) {
       return res.status(400).json({ message: "No data provided for update" });
     }
@@ -47,7 +49,9 @@ const updatePost = async (req, res) => {
 
     res.status(200).json({ message: "Post Updated Successfully", post });
   } catch (error) {
-    res.status(500).json({ message: "Internal Server error", error });
+    res
+      .status(500)
+      .json({ message: "Internal Server error", error: error.message });
   }
 };
 
@@ -58,7 +62,9 @@ const deletePost = async (req, res) => {
 
     res.status(200).json({ message: "Post successfully deleted" });
   } catch (error) {
-    res.status(500).json({ message: "Internal Server error", error });
+    res
+      .status(500)
+      .json({ message: "Internal Server error", error: error.message });
   }
 };
 
